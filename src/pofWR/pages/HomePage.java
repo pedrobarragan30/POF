@@ -1,9 +1,16 @@
 package pofWR.pages;
 
-public class HomePage {
+import org.openqa.selenium.WebDriver;
 
-	public HomePage() {
-		// TODO Auto-generated constructor stub
+public class HomePage {
+	WebDriver driver;
+
+	public HomePage(WebDriver driver) {
+		this.driver = driver;
+		System.out.println("Inside HomePage Constructor");
 	}
 
+	public void search() {
+		System.out.println("Inside HomePage -> search Method");
+	}
 }

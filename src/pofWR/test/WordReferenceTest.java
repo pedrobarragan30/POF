@@ -1,24 +1,20 @@
 package pofWR.test;
 
-import static org.junit.Assert.*;
-
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
-public class WordReferenceTest {
-
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	@After
-	public void tearDown() throws Exception {
-	}
+public class WordReferenceTest extends WordReferenceBase{
 
 	@Test
 	public void test() {
-		fail("Not yet implemented");
+		
+		setUp("http://www.wordreference.com/","chrome");
+		
+		wrHomePage.search();
+		wrDefinitionPage.wrReverse();		
+		wrDefinitionPage.searchList();
+		wrDefinitionPage.searchList();
+		wrDefinitionPage.wrReverse();
+		wrDefinitionPage.searchList();
 	}
 
 }
