@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import pofWR.libs.Properties;
 import pofWR.pages.DefinitionPage;
 import pofWR.pages.HomePage;
 
@@ -18,22 +19,19 @@ public class WordReferenceBase {
 	protected DefinitionPage wrDefinitionPage;
 	protected HomePage wrHomePage;
 
-	public void setUp(String urlToOpen, String browserToUse) {
+	public void setUp(String browserToUse, String urlToOpen) {
 		switch(browserToUse) {
-		case "chrome":
+		case Properties.CHROME_WB:
 			ChromeOptions options = new ChromeOptions();
-			options.addArguments("disable-infobars");
-			options.addArguments("-disable-notifications");
-			options.addArguments("--start-maximized");
+			options.addArguments(Properties.CHROME_NOINFOBARS);
+			options.addArguments(Properties.CHROME_NONOFICATIONS);
 
 			driver = new ChromeDriver(options);
 		   break;
-		case "firefox":
-			
+		case Properties.FIREFOX_WB:
 			driver = new FirefoxDriver();
 			break;
-		case "edge":
-			
+		case Properties.EDGE_WB:
 			driver = new EdgeDriver();
 			break;
 		default:
@@ -41,7 +39,7 @@ public class WordReferenceBase {
 		}
 		
 		driver.get(urlToOpen);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Properties.WAIT_30S, TimeUnit.SECONDS);
 		
 		wrHomePage = new HomePage(driver);
 		wrDefinitionPage = new DefinitionPage(driver);
