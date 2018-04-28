@@ -42,7 +42,6 @@ public class WordReferenceBase {
 		driver.manage().timeouts().implicitlyWait(Properties.WAIT_30S, TimeUnit.SECONDS);
 		
 		wrHomePage = new HomePage(driver);
-		wrDefinitionPage = new DefinitionPage(driver);
 	}
 	
 	@After

@@ -17,7 +17,7 @@ public class WordReferenceTest extends WordReferenceBase{
 		
 		setUp(browser,urlToOpen);
 		
-		wrHomePage.search(searchTerm1);
+		wrDefinitionPage = wrHomePage.search(searchTerm1);
 		wrDefinitionPage.wrReverse();		
 		wrDefinitionPage.searchList(Integer.parseInt(numberOfElementToSearch1));
 		wrDefinitionPage.search(searchTerm2);
