@@ -19,7 +19,7 @@ public class IMDBTest extends IMDBBase{
 		
 		setUp(browser, urlToOpen);
 		
-		imdbFindPage = imdbHomePage.searchMovie();
+		imdbFindPage = imdbHomePage.searchMovie(movieName);
 		imdbFindPage.moreMatches();
 		imdbTitlePage = imdbFindPage.locateAndOpen();
 		imdbTitlePage.validateTitle();
