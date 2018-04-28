@@ -8,6 +8,8 @@ public class Properties {
 	public static final String CHROME_NOINFOBARS = "disable-infobars";
 	public static final String CHROME_NONOFICATIONS = "-disable-notifications";
 	public static final String CHROME_MAXIMIZED = "--start-maximized";
+	public static final String CHROME_INCOGNITO = "incognito";
+	public static final String CHROME_TEST_TYPE = "test-type";
 	
 	/*
 	 * Firefox Properties and Variables
