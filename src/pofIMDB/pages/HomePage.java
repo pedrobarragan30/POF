@@ -1,12 +1,34 @@
 package pofIMDB.pages;
 
-public class HomePage {
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-	public HomePage() {
+import pofIMDB.libs.Properties;
+
+public class HomePage {
+	public WebDriver driver;
+	public WebDriverWait waitHomePage;
+
+	/*
+	 * Constructor
+	 */
+	public HomePage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+		waitHomePage = new WebDriverWait(driver,Properties.WAIT_15S);
 		System.out.println("Home Page Constructor");
 	}
+	
+	/*
+	 * Selectors
+	 */
 
-	public void searchMovie() {
-		System.out.println("Home Page searchMovie");		
+	/*
+	 * Methods
+	 */
+	public FindPage searchMovie() {
+		System.out.println("Home Page searchMovie");
+		return new FindPage(driver);
 	}
 }

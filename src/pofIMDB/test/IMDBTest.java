@@ -19,11 +19,11 @@ public class IMDBTest extends IMDBBase{
 		
 		setUp(browser, urlToOpen);
 		
-		imdbHomePage.searchMovie();
+		imdbFindPage = imdbHomePage.searchMovie();
 		imdbFindPage.moreMatches();
-		imdbFindPage.locateAndOpen();
+		imdbTitlePage = imdbFindPage.locateAndOpen();
 		imdbTitlePage.validateTitle();
-		imdbTitlePage.openCast();
+		imdbCastPage = imdbTitlePage.openCast();
 		imdbCastPage.validateTitle();
 		imdbCastPage.validateActor_Role();
 	}

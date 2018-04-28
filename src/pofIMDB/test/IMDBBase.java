@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import pofIMDB.pages.*;
 import pofIMDB.libs.*;
@@ -34,16 +35,16 @@ public class IMDBBase {
 		case Properties.EDGE_WB:
 			driver = new EdgeDriver();
 			break;
+		case Properties.IE_WB:
+			driver = new InternetExplorerDriver();
+			break;
 		default:
 			System.out.println("The Browser " + browserToUse + " is NOT supported");
 		}
 		driver.get(urlToOpen);
 		driver.manage().timeouts().implicitlyWait(Properties.WAIT_30S, TimeUnit.SECONDS);
 		
-		imdbHomePage = new HomePage();
-		imdbFindPage = new FindPage();
-		imdbTitlePage = new TitlePage();
-		imdbCastPage = new CastPage();
+		imdbHomePage = new HomePage(driver);
 	}
 	
 	@After
