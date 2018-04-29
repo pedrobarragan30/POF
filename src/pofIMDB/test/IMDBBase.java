@@ -28,15 +28,19 @@ public class IMDBBase {
 			options.addArguments(Properties.CHROME_NONOFICATIONS);
 
 			driver = new ChromeDriver(options);
-		   break;
+			System.out.println("STARTING WEB BROWSER: " + Properties.CHROME_WB);
+			break;
 		case Properties.FIREFOX_WB:
 			driver = new FirefoxDriver();
+			System.out.println("STARTING WEB BROWSER: " + Properties.FIREFOX_WB);
 			break;
 		case Properties.EDGE_WB:
 			driver = new EdgeDriver();
+			System.out.println("STARTING WEB BROWSER: " + Properties.EDGE_WB);
 			break;
 		case Properties.IE_WB:
 			driver = new InternetExplorerDriver();
+			System.out.println("STARTING WEB BROWSER: " + Properties.IE_WB);
 			break;
 		default:
 			System.out.println("The Browser " + browserToUse + " is NOT supported");
