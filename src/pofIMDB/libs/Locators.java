@@ -12,6 +12,8 @@ public class Locators {
 	public static final String FINDPAGE_MOVIES_LIST_CLASS = "findResult";
 	
 	/* Title Page Locators*/
+	public static final String TITLEPAGE_MOVIE_TITLE_WRAPPER_CLASS = "title_wrapper";
+	public static final String TITLEPAGE_FULL_CAST_LNK_TXT = "See full cast";
 
 	
 	/* Cast Page Locators */
