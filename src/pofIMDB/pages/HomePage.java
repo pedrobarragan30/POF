@@ -23,7 +23,6 @@ public class HomePage {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		waitHomePage = new WebDriverWait(driver,Properties.WAIT_15S);
-		System.out.println("Home Page Constructor");
 	}
 	
 	/*
@@ -47,8 +46,6 @@ public class HomePage {
 		waitHomePage.until(ExpectedConditions.elementToBeClickable(By.id(Locators.HOMEPAGE_SEARCH_BUTTON_ID)));
 		searchButton.click();
 		
-		
-		System.out.println("Home Page searchMovie");
 		return new FindPage(driver);
 	}
 }
