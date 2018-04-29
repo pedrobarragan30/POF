@@ -11,7 +11,7 @@ public class IMDBTest extends IMDBBase{
 
 	@Test
 	@FileParameters("./data/dtIMDB.csv")
-	public void test(String browser, String urlToOpen, String movieName, String moreMatchesLink,
+	public void test(String browser, String urlToOpen, String movieName, 
 			String sequelName, String movieYear, String fullCastLink,
 			String roleActor_1, String roleName_1,
 			String roleActor_2, String roleName_2,
@@ -21,7 +21,7 @@ public class IMDBTest extends IMDBBase{
 		
 		imdbFindPage = imdbHomePage.searchMovie(movieName);
 		imdbFindPage.moreMatches();
-		imdbTitlePage = imdbFindPage.locateAndOpen();
+		imdbTitlePage = imdbFindPage.locateAndOpen(sequelName, movieYear);
 		imdbTitlePage.validateTitle();
 		imdbCastPage = imdbTitlePage.openCast();
 		imdbCastPage.validateTitle();
